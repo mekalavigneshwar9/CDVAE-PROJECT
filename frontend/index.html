@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDVAE Crystal Generator</title>
+    <link rel="stylesheet" href="style.css?v=1.1">
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Load Plotly for 3D visualization (deferred to prevent hanging) -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" defer></script>
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>CDVAE <span>Generator</span></h1>
+            <div class="header-info">
+                <p>Crystal Diffusion Variational Autoencoder</p>
+                <div class="connection-status">
+                    <span class="status-dot" id="status-dot"></span>
+                    <span id="status-text">Connecting...</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="glass-panel controls-panel">
+
+
+                <button id="generate-btn" class="primary-btn">
+                    <span class="btn-text">Generate New Crystal</span>
+                    <div class="loader hidden" id="btn-loader"></div>
+                </button>
+                
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <span class="stat-label">Formula</span>
+                        <span class="stat-value" id="formula-val">--</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Elements</span>
+                        <span class="stat-value" id="elements-val">--</span>
+                    </div>
+                </div>
+
+                <button id="download-btn" class="secondary-btn hidden">Download CIF File</button>
+            </div>
+
+            <div class="glass-panel viewer-panel">
+                <div id="plot-container">
+                    <div class="empty-state">
+                        <p>Click generate to hallucinate a novel crystal structure via DDPM.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js?v=1.1"></script>
+</body>
+</html>
