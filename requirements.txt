@@ -7,3 +7,4 @@ pymatgen
 numpy
 pydantic
 pydantic-settings
+python-multipart
